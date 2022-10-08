@@ -2,7 +2,6 @@ package net.diegoquirino.calculator.service;
 
 
 import net.diegoquirino.calculator.model.Product;
-import net.diegoquirino.calculator.repository.ProductRepository;
 import net.diegoquirino.calculator.repository.stub.ProductRepositoryStub;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -19,13 +18,13 @@ public class ProductDiscountCalculationServiceIntegrationTests {
 
     @Autowired
     ProductDiscountCalculationService driver;
-    static ProductRepository productRepository;
+    static ProductRepositoryStub productRepository;
 
     //Double productDefaultPric = 100.00;
 
     @BeforeAll
     public static void setupAll(){
-        productRepository = new ProductRepositoryStub();
+         productRepository = new ProductRepositoryStub();
     }
 
     @Test
